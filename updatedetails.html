@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Update Details</title>
+</head>
+<body style="background-Color:#212121 ; Color : white" >
+
+    <h2>Update Person Details</h2><br>
+
+    <input type="text" id = "name" placeholder="Enter name">
+    <input type="number" id = "age" placeholder="Enter age">
+    <input type="text" id = "address" placeholder="Enter address">
+
+
+    <button onclick="updateDetails()">Submit</button>
+    <br>
+
+    <div id="update"></div>
+    <script>
+
+    let person ={
+        name : "Ram",
+        age : 24,
+        address : "Chamba"
+
+    };
+
+    document.getElementById("name").value ;
+    document.getElementById("age").value ;
+    document.getElementById("address").value ;
+
+
+    document.getElementById("update").innerHTML=`
+    <strong> Updated Info : </strong><br>
+    Name : ${person.name}<br>
+    Age : ${person.age}<br>
+    Address : ${person.address}
+    
+    `;
+
+    function updateDetails(){
+        person.name = document.getElementById("name").value ;
+        person.age  = parseInt(document.getElementById("age").value);
+        person.address = document.getElementById("address").value;
+
+        document.getElementById("update").innerHTML=`
+        <strong> Updated Info : </strong><br>
+        Name : ${person.name}<br>
+        Age : ${person.age}<br>
+        Address : ${person.address}
+        `;
+
+
+    }
+
+    </script>
+    
+</body>
+</html>
