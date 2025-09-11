@@ -9,7 +9,7 @@
 // })
 
 
-// const promise = new Promise(function(resolve,reeject){
+// const promise = new Promise(function(resolve,reject){
 //     setTimeout(function(){
 //         resolve({username: "Rajneesh", email: "rajneesh@123.com"})
 //     },2000)

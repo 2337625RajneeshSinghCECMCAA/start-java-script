@@ -29,7 +29,7 @@
     nextDate.setDate(nextDate.getDate() + 40);
 
    
-    const day = nextDate.getDay(); // 0 = Sunday, ..., 6 = Saturday
+    const day = nextDate.getDay(); 
     const daysToNextSaturday = (6 - day + 7) % 7;
     nextDate.setDate(nextDate.getDate() + daysToNextSaturday);
 
