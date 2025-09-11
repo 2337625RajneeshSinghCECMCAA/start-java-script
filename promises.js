@@ -58,13 +58,55 @@
 // promisefour()
 
 
-fetch('http://jsonplaceholder.typicode.com/users')
-.then((response)=> {
-    return response.json()
-})
-.then((data)=> {
-    console.log(data);
-})
-.catch((error)=> {
-    console.log(error)
-})
+// fetch('http://jsonplaceholder.typicode.com/users')
+// .then((response)=> {
+//     return response.json()
+// })
+// .then((data)=> {
+//     console.log(data);
+// })
+// .catch((error)=> {
+//     console.log(error)
+// })
+
+// pooja-dates.js
+
+// 1. Get today's date
+// let today = new Date();
+
+// // 2. Set end date (1 year from today)
+// let oneYearLater = new Date(today);
+// oneYearLater.setFullYear(today.getFullYear() + 1);
+
+// // 3. Array to store pooja dates
+// let pray = [new Date(today)];
+
+
+
+// // 4. Start from today
+// let currentDate = new Date(today);
+
+// // 5. Repeat until 1 year is complete
+// while (true) {
+//   // Add 40 days
+//   currentDate.setDate(currentDate.getDate() + 40);
+
+//   // Move to the next Saturday
+//   let day = currentDate.getDay(); // 0 = Sunday, 6 = Saturday
+//   let daysToSaturday = (6 - day + 7) % 7;
+//   currentDate.setDate(currentDate.getDate() + daysToSaturday);
+
+//   // Stop if date goes beyond 1 year
+//   if (currentDate > oneYearLater) {
+//     break;
+//   }
+
+//   // Add to the list
+//   pray.push(new Date(currentDate));
+// }
+
+// // 6. Print all pooja dates in terminal
+// console.log("Pray (Every 40 days on the next Saturday):\n");
+// pray.forEach((date) => {
+//   console.log(` ${date.toDateString()}`);
+// });

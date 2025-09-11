@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pray Every 40 Days on Saturday</title>
+</head>
+<body>
+
+<h3>Pray Dates (Every 40 days on the next Saturday, for 1 year)</h3>
+<div id="pray"></div>
+
+<script>
+  
+  const today = new Date();
+
+  const endDate = new Date(today);
+  endDate.setFullYear(today.getFullYear() + 1);
+
+  
+  const pray = [];
+
+  
+  pray.push(new Date(today));
+
+  
+  let nextDate = new Date(today);
+
+  while (true) {
+    
+    nextDate.setDate(nextDate.getDate() + 40);
+
+   
+    const day = nextDate.getDay(); // 0 = Sunday, ..., 6 = Saturday
+    const daysToNextSaturday = (6 - day + 7) % 7;
+    nextDate.setDate(nextDate.getDate() + daysToNextSaturday);
+
+    
+    if (nextDate <= endDate) {
+      pray.push(new Date(nextDate));
+    } else {
+      break;
+    }
+  }
+
+  pray.forEach((date) => {
+  document.getElementById("pray").innerHTML += date.toDateString() + "<br>";
+});
+</script>
+
+</body>
+</html>
