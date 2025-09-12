@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Calculator with Operator Display</title>
+</head>
+<body style="background-color: rgb(2, 14, 19); color: white;">
+
+  <h2>Calculator</h2>
+  
+  <input type="number" id="num1" placeholder="First Number">
+  <input type="text" id="operatorBox" placeholder="Op" readonly size="1" style="text-align: center;">
+  <input type="number" id="num2" placeholder="Second Number"> =
+   <input type="text" id="resultBox" placeholder="Result will show here" readonly>
+  <br><br>
+  
+  <button onclick="chooseOp('+')">+</button>
+  <button onclick="chooseOp('-')">-</button>
+  <button onclick="chooseOp('*')">*</button>
+  <button onclick="chooseOp('/')">/</button>
+  
+  <br><br>
+  <button onclick="compute()">Compute</button>
+ 
+  
+  <script>
+    let selectedOperator = null;
+
+    function chooseOp(op) {
+      selectedOperator = op;
+      document.getElementById("operatorBox").value = op;
+    }
+
+    function compute() {
+      const a = parseFloat(document.getElementById("num1").value);
+      const b = parseFloat(document.getElementById("num2").value);
+      const op = selectedOperator;
+      let result;
+
+      if (!op) {
+        alert("Please select an operator first!");
+        return;
+      }
+      if (isNaN(a) || isNaN(b)) {
+        alert("Please enter both numbers!");
+        return;
+      }
+
+      switch(op) {
+        case '+':
+          result = a + b;
+          break;
+        case '-':
+          result = a - b;
+          break;
+        case '*':
+          result = a * b;
+          break;
+        case '/':
+          if (b === 0) {
+            result = "Cannot divide by zero";
+          } else {
+            result = a / b;
+          }
+          break;
+        default:
+          result = "Unknown operator";
+      }
+
+      document.getElementById("resultBox").value = result;
+    }
+  </script>
+
+</body>
+</html>

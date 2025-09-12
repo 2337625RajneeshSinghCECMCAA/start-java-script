@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Update Details</title>
+</head>
+<body style="background-color:#212121; color:white;">
+
+  <h2>Update Person Details</h2><br>
+
+  <input type="text" id="name" placeholder="Enter name">
+  <input type="number" id="age" placeholder="Enter age">
+  <input type="text" id="address" placeholder="Enter address">
+
+  <button onclick="updateDetails()">Submit</button>
+  <br>
+
+  <div id="update"></div>
+
+  <script>
+    let person = {
+      name: "Ram",
+      age: 24,
+      address: "Chamba"
+    };
+
+    // Template string using replaceAll placeholders
+    let template = `
+      <strong> Updated Info : </strong><br>
+      Name : {{name}}<br>
+      Age : {{age}}<br>
+      Address : {{address}}
+    `;
+
+    // Function to render person data using replaceAll
+    function renderPerson() {
+      let result = template
+        .replaceAll("{{name}}", person.name)
+        .replaceAll("{{age}}", person.age)
+        .replaceAll("{{address}}", person.address);
+
+      document.getElementById("update").innerHTML = result;
+    }
+
+    // Show initial data
+    renderPerson();
+
+    function updateDetails() {
+      person.name = document.getElementById("name").value;
+      person.age = parseInt(document.getElementById("age").value);
+      person.address = document.getElementById("address").value;
+
+      renderPerson(); // Re-render updated data
+    }
+  </script>
+
+</body>
+</html>
