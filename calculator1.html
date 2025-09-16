@@ -18,22 +18,21 @@
   <button onclick="chooseOp('*')">*</button>
   <button onclick="chooseOp('/')">/</button>
   
-  <br><br>
-  <button onclick="compute()">Compute</button>
+  
+  
  
   
   <script>
-    let selectedOperator = null;
 
     function chooseOp(op) {
-      selectedOperator = op;
+      
       document.getElementById("operatorBox").value = op;
-    }
+    
 
-    function compute() {
+   
       const a = parseFloat(document.getElementById("num1").value);
       const b = parseFloat(document.getElementById("num2").value);
-      const op = selectedOperator;
+      
       let result;
 
       if (!op) {
